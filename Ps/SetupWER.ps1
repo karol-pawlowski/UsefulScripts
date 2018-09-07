@@ -11,7 +11,7 @@ else
     Write-Output "LocalDumps key created."
     Set-Location -Path ".\LocalDumps"
 }
-if (Test-Path -Path ".\Fleetmatics.Services.Windows.HosStatusChangeFeededService.exe")
+if (Test-Path -Path ".\file.exe")
 {
     Set-ItemProperty -Path ".\Fleetmatics.Services.Windows.HosStatusChangeFeededService.exe" -Name DumpType -Value "2" -Type DWORD
     Set-ItemProperty -Path ".\Fleetmatics.Services.Windows.HosStatusChangeFeededService.exe" -Name DumpCount -Value "5" -Type DWORD
@@ -20,7 +20,7 @@ if (Test-Path -Path ".\Fleetmatics.Services.Windows.HosStatusChangeFeededService
 }
 else
 {
-    New-Item -Path ".\Fleetmatics.Services.Windows.HosStatusChangeFeededService.exe"
+    New-Item -Path ".\file.exe"
     Set-ItemProperty -Path ".\Fleetmatics.Services.Windows.HosStatusChangeFeededService.exe" -Name DumpType -Value "2" -Type DWORD
     Set-ItemProperty -Path ".\Fleetmatics.Services.Windows.HosStatusChangeFeededService.exe" -Name DumpCount -Value "5" -Type DWORD
     Set-ItemProperty -Path ".\Fleetmatics.Services.Windows.HosStatusChangeFeededService.exe" -Name DumpFolder -Value "C:\Temp\CrashDumps\" -Type ExpandString
